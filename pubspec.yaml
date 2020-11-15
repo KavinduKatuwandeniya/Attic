@@ -47,6 +47,7 @@ flutter:
   assets:
     - images/and.png
     - images/logo3.png
+    - images/logo4.png
     - images/intro.png
     - images/step1.png
     - images/step2.png

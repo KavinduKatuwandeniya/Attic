@@ -1,4 +1,5 @@
 import 'package:attic/intro.dart';
+import 'package:attic/menu.dart';
 import 'package:attic/startPage.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         '/Home': (BuildContext context) => new Start()
 
       },
-      home: new Start(), //first page displayed
+      home: new menu(), //first page displayed
     );
   }
 }
