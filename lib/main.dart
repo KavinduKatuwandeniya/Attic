@@ -1,5 +1,6 @@
 import 'package:attic/intro.dart';
 import 'package:attic/menu.dart';
+import 'package:attic/options.dart';
 import 'package:attic/startPage.dart';
 import 'package:flutter/material.dart';
 

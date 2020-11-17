@@ -1,5 +1,5 @@
 import 'package:attic/intro.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:attic/options.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'dart:math' as math;
@@ -23,7 +23,7 @@ class _Menu extends State<menu>{
                   onPressed: ()=> exit(0),
                 )
               ],
-            backgroundColor:  Color(0xFFFFCF92),
+            backgroundColor:  Color(0xFFFFCD8C),
             automaticallyImplyLeading: false,
 
             flexibleSpace: Row(
@@ -39,7 +39,7 @@ class _Menu extends State<menu>{
           )
       ),
       body: new Container(
-        color: Color(0xFFFFCF92),
+        color: Color(0xFFFFCD8C),
         child: Row(
 
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -49,7 +49,7 @@ class _Menu extends State<menu>{
               children: <Widget>[
                 Expanded(
                   child: Container(
-                    color: Color(0xFFFFCF92),
+                    color: Color(0xFFFFCD8C),
                     child: LayoutBuilder(
                       builder: (BuildContext context, BoxConstraints constraints) {
                         return CustomPaint(
@@ -74,10 +74,15 @@ class _Menu extends State<menu>{
                     child: Container(
                       padding: EdgeInsets.fromLTRB(0, 100, 0, 0),
                       width: 400,
-                      color: Color(0xFFFFCF92),
+                      color: Color(0xFFFFCD8C),
                       child: Column(
                         children: [
-                          FlatButton(onPressed: null,
+                          FlatButton(onPressed: () {
+                              Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Intro()),
+                                );
+                              },
 
                               child: Text("HOW TO USE",
                                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Color(0xFFC06D00)),
@@ -86,7 +91,12 @@ class _Menu extends State<menu>{
 
                           ),
                           Padding(padding: EdgeInsets.fromLTRB(0,10,10,10)),
-                          FlatButton(onPressed: null,
+                          FlatButton(onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Options()),
+                            );
+                          },
 
                             child: Text("HOME",
                               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Color(0xFFC06D00)),
@@ -112,6 +122,7 @@ class _Menu extends State<menu>{
                             color: Color(0x00FFCD8C),
 
                           ),
+                          Padding(padding: EdgeInsets.only(bottom: 100)),
                           LayoutBuilder(
                             builder: (BuildContext context, BoxConstraints constraints) {
                               return CustomPaint(
@@ -131,7 +142,7 @@ class _Menu extends State<menu>{
                                 icon: Icon(Icons.logout, color: Color(0xFFC06D00), size: 35, ),
                                 onPressed: ()=> exit(0),
                               ),
-                              Text("  LOG OUT", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                              Text("  LOG OUT", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color(0XFFC06D00)),),
 
                             ],
 
@@ -166,9 +177,9 @@ class MyPainter extends CustomPainter {
     linePaint.color=Color(0X4F754800);
     Paint linePaint2 = Paint()..strokeWidth = 2;
     linePaint2.color=Color(0X7F754800);
-    canvas.drawLine(Offset(25, 0), Offset(25, 400), linePaint);
-    canvas.drawLine(Offset(50, 250), Offset(50, 600), linePaint2);
-    canvas.drawLine(Offset(75, 40), Offset(75, 500), linePaint);
+    canvas.drawLine(Offset(30, 0), Offset(30, 400), linePaint);
+    canvas.drawLine(Offset(60, 250), Offset(60, 600), linePaint2);
+    canvas.drawLine(Offset(90, 40), Offset(90, 500), linePaint);
 
   }
 
@@ -183,7 +194,7 @@ class MyHorizontalPainter extends CustomPainter{
   void paint(Canvas canvas, Size size){
     Paint linePaint = Paint()..strokeWidth = 2;
     linePaint.color=Color(0X4F754800);
-    canvas.drawLine(Offset(70, 50), Offset(220, 50), linePaint);
+    canvas.drawLine(Offset(30, 50), Offset(260, 50), linePaint);
   }
   @override
   bool shouldRepaint(CustomPainter old) {
@@ -195,7 +206,7 @@ class MyHorizontalPainter2 extends CustomPainter{
   void paint(Canvas canvas, Size size){
     Paint linePaint = Paint()..strokeWidth = 3;
     linePaint.color=Color(0X4F754800);
-    canvas.drawLine(Offset(70, -25), Offset(220, -25), linePaint);
+    canvas.drawLine(Offset(30, -25), Offset(260, -25), linePaint);
   }
   @override
   bool shouldRepaint(CustomPainter old) {
