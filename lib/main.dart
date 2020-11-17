@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         '/Home': (BuildContext context) => new Start()
 
       },
-      home: new menu(), //first page displayed
+      home: new Intro(), //first page displayed
     );
   }
 }

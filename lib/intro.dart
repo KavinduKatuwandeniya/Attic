@@ -1,111 +1,77 @@
+import 'package:attic/menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:intro_slider/intro_slider.dart';
 import 'package:intro_slider/slide_object.dart';
+
 class Intro extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return _Intro();
   }
 }
-class _Intro extends State<Intro>{
-  List <Slide> slides=new List();
+
+class _Intro extends State<Intro> {
+  List<Slide> slides = new List();
 
   Function goToTab;
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
 
-    slides.add(
-      new Slide(
-        title: "What is Attic?",
-        styleTitle: TextStyle(
-            fontSize: 30.0,
-            color: Color(0xFF754800)),
-          description: "Attic is a AR powered tool designed to give its you the capability to design your interior space with hundreds of furniture designs, wallpapers and ornaments in the marketplace of their choosing with the use of your camera.",
-          styleDescription: TextStyle(
+    slides.add(new Slide(
+      title: "What is Attic?",
+      styleTitle: TextStyle(fontSize: 30.0, color: Color(0xFF754800)),
+      description:
+      "Attic is a AR powered tool designed to give its you the capability to design your interior space with hundreds of furniture designs, wallpapers and ornaments in the marketplace of their choosing with the use of your camera.",
+      styleDescription: TextStyle(fontSize: 20.0, color: Color(0xFF754800)),
+      pathImage: "images/intro.png",
+    ));
+    slides.add(new Slide(
+      title: "Step 01",
+      styleTitle: TextStyle(fontSize: 30.0, color: Color(0xFF754800)),
+      description:
+      "After opening the camera place a chair on the background clearly and wait until the system automatically calibrate your surroundings. ",
+      styleDescription: TextStyle(
+        color: Color(0xFF754800),
         fontSize: 20.0,
-        color: Color(0xFF754800)
-        ),
-    pathImage: "images/intro.png",
-      )
-      );
-    slides.add(
-        new Slide(
-          title: "Step 01",
-          styleTitle: TextStyle(
-              fontSize: 30.0,
-              color: Color(0xFF754800)
-              ),
-          description: "After opening the camera place a chair on the background clearly and wait until the system automatically calibrate your surroundings. ",
-          styleDescription: TextStyle(
-            color: Color(0xFF754800),
-            fontSize: 20.0,
-            ),
+      ),
+      pathImage: "images/step1.png",
+    ));
+    slides.add(new Slide(
+      title: "Step 02",
+      styleTitle: TextStyle(fontSize: 30.0, color: Color(0xFF754800)),
+      description:
+      "Now you are ready to use. Direct your camera towards any empty space where you want to have any furniture or walls to preview wallpapers and change colors.",
+      styleDescription: TextStyle(
+        color: Color(0xFF754800),
+        fontSize: 20.0,
+      ),
+      pathImage: "images/step2.png",
+    ));
+    slides.add(new Slide(
+      title: "Step 03",
+      styleTitle: TextStyle(fontSize: 30.0, color: Color(0xFF754800)),
+      description:
+      "You're almost at the there! Select the furniture you want, get a quotations, place an order and pay a advance fee through this app with few taps on your phone.",
+      styleDescription: TextStyle(
+        color: Color(0xFF754800),
+        fontSize: 20.0,
+      ),
+      pathImage: "images/step3.png",
+    ));
+  }
 
-          pathImage: "images/step1.png",
-        )
-    );
-    slides.add(
-        new Slide(
-          title: "Step 02",
-          styleTitle: TextStyle(
-              fontSize: 30.0,
-              color: Color(0xFF754800)
-          ),
-          description: "Now you are ready to use. Direct your camera towards any empty space where you want to have any furniture or walls to preview wallpapers and change colors.",
-          styleDescription: TextStyle(
-            color: Color(0xFF754800),
-            fontSize: 20.0,
-          ),
-
-          pathImage: "images/step2.png",
-        )
-    );
-    slides.add(
-        new Slide(
-          title: "Step 03",
-          styleTitle: TextStyle(
-              fontSize: 30.0,
-              color: Color(0xFF754800)
-          ),
-          description: "You're almost at the there! Select the furniture you want, get a quotations, place an order and pay a advance fee through this app with few taps on your phone.",
-          styleDescription: TextStyle(
-            color: Color(0xFF754800),
-            fontSize: 20.0,
-          ),
-
-          pathImage: "images/step3.png",
-        )
-    );
-}
   void onDoneSwipe() {
     // Back to the first tab
     this.goToTab(0);
   }
+
   void onTabChangeCompleted(index) {
     // Index of current tab is focused
   }
-  Widget renderNextBtn() {
-    return Icon(
-      Icons.navigate_next,
-      color: Color(0xffffcc5c),
-      size: 35.0,
-    );
-  }
-  Widget renderDoneBtn() {
-    return Icon(
-      Icons.done,
-      color: Color(0xffffcc5c),
-    );
-  }
-  Widget renderSkipBtn() {
-    return Icon(
-      Icons.skip_next,
-      color: Color(0xffffcc5c),
-    );
-  }
+
   List<Widget> renderListCustomTabs() {
     List<Widget> tabs = new List();
     for (int i = 0; i < slides.length; i++) {
@@ -118,7 +84,6 @@ class _Intro extends State<Intro>{
           margin: EdgeInsets.only(bottom: 60.0, top: 60.0),
           child: ListView(
             children: <Widget>[
-
               Container(
                 padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
                 child: Text(
@@ -151,8 +116,8 @@ class _Intro extends State<Intro>{
                     currentSlide.pathImage,
                     width: 425.0,
                     height: 425.0,
-                    
                   )),
+
             ],
           ),
         ),
@@ -174,19 +139,25 @@ class _Intro extends State<Intro>{
 
           // Tabs
           listCustomTabs: this.renderListCustomTabs(),
-          backgroundColorAllSlides: Colors.white,
+          backgroundColorAllSlides: Colors.black,
           refFuncGoToTab: (refFunc) {
             this.goToTab = refFunc;
           },
 
           // Show or hide status bar
           shouldHideStatusBar: true,
-
-          // On tab change completed
-          onTabChangeCompleted: this.onTabChangeCompleted,
+          colorActiveDot:  Color(0xFF754800),
+          colorDoneBtn: Color(0xFF754800),
+          colorSkipBtn: Color(0xFFFFF1D5),
+          colorPrevBtn: Color(0xFFFFF1D5),
+          onDonePress:  () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => menu()),
+            );
+          },
         ),
       ),
     );
   }
 }
-
