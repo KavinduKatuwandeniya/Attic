@@ -28,7 +28,10 @@ dependencies:
   flutter_login: ^1.0.14
   google_fonts: ^1.1.1
   image_picker: ^0.6.6+5
-  camera: ^0.4.2
+  camera: ^0.5.2+1
+  path_provider: ^1.1.0
+  path: ^1.6.2
+  esys_flutter_share:
 
 
 
@@ -53,7 +56,10 @@ flutter:
   uses-material-design: true
   assets:
     - images/and.png
+    - images/andnew.png
     - images/logo3.png
+    - images/logo3.png
+    - images/logo4.png
     - images/intro.png
     - images/step1.png
     - images/step2.png

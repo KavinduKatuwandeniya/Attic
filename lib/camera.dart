@@ -1,3 +1,5 @@
+import 'package:attic/loginscreen.dart';
+import 'package:attic/menu.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -8,6 +10,7 @@ class Camera extends StatefulWidget {
 }
 
 class _CameraState extends State<Camera> {
+  int clicked=0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,7 +72,7 @@ class _CameraState extends State<Camera> {
                         color: Color(0xFFFF5F5F),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(18.0)),
-                        onPressed: () {},
+                        onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Login()));},
                         child: const Text('Deny',
                             style:
                                 TextStyle(fontSize: 20, color: Colors.white)),
@@ -79,7 +82,7 @@ class _CameraState extends State<Camera> {
                         color: Color(0xFF73CA61),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(18.0)),
-                        onPressed: () {},
+                        onPressed: () {clicked+=1; clicked==2 ? Navigator.push(context,MaterialPageRoute(builder: (context) => menu())):null;},
                         child: const Text('Allow',
                             style:
                                 TextStyle(fontSize: 20, color: Colors.white)),
@@ -102,7 +105,7 @@ class _CameraState extends State<Camera> {
                 children: [
                   //  new Text('Allow Attic to use your camera'),
                   Text(
-                    'Allow Attic to access your galerry',
+                    'Allow Attic to access your gallery',
                     style: GoogleFonts.robotoSlab(
                       textStyle: TextStyle(
                           color: Colors.brown.shade800,
@@ -136,7 +139,7 @@ class _CameraState extends State<Camera> {
                         color: Color(0xFFFF5F5F),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(18.0)),
-                        onPressed: () {},
+                        onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Login()));},
                         child: const Text('Deny',
                             style:
                                 TextStyle(fontSize: 20, color: Colors.white)),
@@ -146,7 +149,7 @@ class _CameraState extends State<Camera> {
                         color: Color(0xFF73CA61),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(18.0)),
-                        onPressed: () {},
+                        onPressed: () {clicked+=1; clicked==2 ? Navigator.push(context,MaterialPageRoute(builder: (context) => menu())):null;},
                         child: const Text('Allow',
                             style:
                                 TextStyle(fontSize: 20, color: Colors.white)),

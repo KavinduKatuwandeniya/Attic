@@ -121,16 +121,47 @@ class _SignupState extends State<Signup> {
                     SizedBox(
                       height: 28.0,
                     ),
-                    RaisedButton(
-                      padding: EdgeInsets.all(20.0),
-                      color: Color(0xFFFF5F5F),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.0),side: BorderSide(color: Colors.red)),
-                      onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Login()));},
-                      child: const Text('Signup using Google',
-                          style: TextStyle(fontSize: 20,color: Colors.white)),
-                    ),
+                    Row(
+                      children: [
+                        RaisedButton(
+                          padding: EdgeInsets.all(20.0),
+                          color: Color(0x00FF5F5F),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.0),side: BorderSide(color: Colors.red)),
+                          onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Login()));},
+                          child: const Text('Signup using Google',
+                              style: TextStyle(fontSize: 16,color: Colors.white)),
+                        ),
+                        Padding(padding: EdgeInsets.fromLTRB(0, 0, 10, 0)),
+                        new ButtonTheme(
+                          minWidth: 100,
+                          child: RaisedButton(
+                            padding: EdgeInsets.all(20.0),
+                            color: Color(0xFFFF3232),
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.0),side: BorderSide(color: Color(0xFFFF3232))),
+                            onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Login()));},
+                            child: const Text('Signup',
+                                style: TextStyle(fontSize: 16, color: Colors.white)),
+                          ),
+                        ),
+                      ],
+                    )
+
                   ],
                 ),
+
+              ),
+              Row(
+                children: [
+                  Padding(padding: EdgeInsets.fromLTRB(10, 0, 0, 0)),
+                  Container(
+                    child: Image(image: AssetImage('images/andnew.png') , width: 150,),
+                  ),
+                  Container(
+
+                    child:Text("Copyright 2020\nAll Rights Reserved",style: TextStyle(fontSize: 12, color: Color(0xFFC06D00)),),
+
+                  ),
+                ],
               )
             ],
           ),

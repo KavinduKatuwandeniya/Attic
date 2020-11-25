@@ -1,4 +1,6 @@
+import 'package:attic/CameraScreen.dart';
 import 'package:attic/intro.dart';
+import 'package:attic/menu.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
@@ -10,14 +12,7 @@ class Options extends StatefulWidget{
 }
 
 class _Options extends State<Options>{
-  final _picker=ImagePicker();
-  PickedFile _image;
-   getImage(ImageSource source) async{
-     PickedFile image=await _picker.getImage(source: source);
-     this.setState((){
-       _image=image;
-     });
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +24,7 @@ class _Options extends State<Options>{
     actions: <Widget>[
     IconButton(
     icon: Icon(Icons.menu_rounded, color: Color(0xFFC06D00), size: 50, ),
-    onPressed: (){
-
-    }
+    onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => menu()));},
     )
     ],
     backgroundColor:  Color(0xFFFFF1D5),
@@ -51,12 +44,13 @@ class _Options extends State<Options>{
       ),
       body: new Container(
         color: Color(0xFFFFF1D5),
-          child: Row(
+          child: Column(
+              children: [Row(
             children: [
               Padding(padding: EdgeInsets.fromLTRB(5, 10, 0, 0)),
               RaisedButton(
               onPressed: () {
-                getImage(ImageSource.camera);
+
               },
               color: Color(0XFFE78200),
                 splashColor: Colors.black,
@@ -109,9 +103,23 @@ class _Options extends State<Options>{
                 shape: CircleBorder(),
               ),
 
+
+            ],
+          ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              new Container(
+                alignment: Alignment.center,
+                child: new SizedBox(
+                  height: 100,
+                  width: 100,
+                  child: new CameraScreen(),
+                ),
+              )
             ],
           )
-        ),
+        ])),
     );
 
   }

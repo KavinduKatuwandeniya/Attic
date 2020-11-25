@@ -1,3 +1,4 @@
+import 'package:attic/camera.dart';
 import 'package:attic/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -171,7 +172,7 @@ class _Intro extends State<IntroIn> {
           onDonePress:() {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => Signup()),
+              MaterialPageRoute(builder: (context) => Camera()),
             );
           },          // On tab change completed
           colorActiveDot:Color(0xFF754800),

@@ -1,4 +1,8 @@
+import 'package:attic/CameraScreen.dart';
 import 'package:attic/intro.dart';
+import 'package:attic/loginscreen.dart';
+import 'package:attic/options.dart';
+import 'package:attic/signup.dart';
 import 'package:attic/startPage.dart';
 import 'package:flutter/material.dart';
 
@@ -14,10 +18,10 @@ class MyApp extends StatelessWidget {
       title: 'Navigation',
       routes: <String, WidgetBuilder>{
         //All available pages
-        '/Home': (BuildContext context) => new Start()
+        '/Home': (BuildContext context) => new Login()
 
       },
-      home: new Start(), //first page displayed
+      home: new Options(), //first page displayed
     );
   }
 }

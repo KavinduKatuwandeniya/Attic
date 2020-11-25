@@ -1,4 +1,5 @@
 import 'package:attic/intro.dart';
+import 'package:attic/loginscreen.dart';
 import 'package:attic/options.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
@@ -140,7 +141,7 @@ class _Menu extends State<menu>{
                               Padding(padding: EdgeInsets.fromLTRB(40, 130, 20, 10)),
                               IconButton(
                                 icon: Icon(Icons.logout, color: Color(0xFFC06D00), size: 35, ),
-                                onPressed: ()=> exit(0),
+                                onPressed: () {Navigator.push(context,MaterialPageRoute(builder: (context) => Login()));},
                               ),
                               Text("  LOG OUT", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color(0XFFC06D00)),),
 

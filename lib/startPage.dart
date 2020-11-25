@@ -3,6 +3,7 @@ import 'dart:async';
 //import 'dart:js';
 
 import 'package:attic/intro.dart';
+import 'package:attic/loginscreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -31,7 +32,7 @@ class _State extends State<Start> {
   }
   route(){
     Navigator.pushReplacement(this.context, MaterialPageRoute(
-        builder: (context)=>IntroIn()));
+        builder: (context)=>Login()));
   }
   initScreen(BuildContext context) {
     return Scaffold(
