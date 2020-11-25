@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         '/Home': (BuildContext context) => new Login()
 
       },
-      home: new Options(), //first page displayed
+      home: new Start(), //first page displayed
     );
   }
 }
